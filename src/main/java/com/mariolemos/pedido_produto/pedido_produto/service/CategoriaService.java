@@ -16,5 +16,21 @@ public class CategoriaService {
     public List<Categoria> buscarTodos() {
         return categoriaRepository.findAll();
     }
+
+    public Categoria buscarPorId(Long id) {
+        Categoria categoria = categoriaRepository.findById(id).get();
+        return categoria;
+    }
+
+    public Categoria incluir(Categoria categoria) {
+        categoria = categoriaRepository.save(categoria);
+        return categoria;
+    }
+
+    public Categoria atualizar(Categoria categoria, Long id){
+        Categoria categoria1 = buscarPorId(id);
+        categoria1.setNome(categoria.getNome());
+        return categoriaRepository.save(categoria1);
+    }
 }
 
