@@ -40,4 +40,8 @@ public class CategoriaController {
         Categoria categoria1 = categoriaService.atualizar(categoria, id);
         return ResponseEntity.ok().body(categoria1);
     }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        categoriaService.excluir(id);
+    }
 }

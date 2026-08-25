@@ -32,5 +32,9 @@ public class CategoriaService {
         categoria1.setNome(categoria.getNome());
         return categoriaRepository.save(categoria1);
     }
+
+    public void excluir(Long id) {
+      categoriaRepository.deleteById(id);
+    }
 }
 

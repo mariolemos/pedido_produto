@@ -11,6 +11,4 @@ public class PedidoProdutoApplication {
 		SpringApplication.run(PedidoProdutoApplication.class, args);
 	}
 
-
-
 }

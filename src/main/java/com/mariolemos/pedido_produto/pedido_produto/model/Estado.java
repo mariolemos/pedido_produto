@@ -1,6 +1,5 @@
 package com.mariolemos.pedido_produto.pedido_produto.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,16 +13,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CATEGORIA")
-public class Categoria {
-
+@Table(name = "ESTADO")
+public class Estado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @Column(name = "ID")
     private Long id;
-    @Column(name = "Nome")
+
+    @Column(name = "NOME")
     private String nome;
-    @ManyToMany(mappedBy = "categorias")
-    private List<Produto> produtos = new ArrayList<>();
+
+    @OneToMany (mappedBy = "estado")
+    private List<Cidade> cidades = new ArrayList<>();
 }
